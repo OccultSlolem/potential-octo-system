@@ -3,6 +3,6 @@
 </script>
 
  <svelte:head>
-     <title>trilinkt</title>
+    <title>trilinkt</title>
  </svelte:head>
  

@@ -6,7 +6,7 @@
       createUserWithEmailAndPassword,
       GithubAuthProvider,
       OAuthProvider,
-GoogleAuthProvider,
+      GoogleAuthProvider,
     } from "firebase/auth";
     import type { AuthError, UserCredential } from "firebase/auth";
     import { goto } from "$app/navigation";
