@@ -2,10 +2,6 @@
     
 </script>
 
-<style>
-
-</style>
-
  <svelte:head>
      <title>trilinkt</title>
  </svelte:head>
