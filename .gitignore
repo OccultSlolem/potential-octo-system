@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,macos,visualstudiocode,solidity
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,visualstudiocode,solidity
 
+keys.txt
+
 ### macOS ###
 # General
 .DS_Store
