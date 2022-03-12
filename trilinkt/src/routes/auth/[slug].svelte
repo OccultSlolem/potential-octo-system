@@ -85,10 +85,7 @@
         message = undefined;
       }, 4000);
     }
-    /**
-     *
-     * @param {string} element
-     */
+    
     function errorDirective(element: string) {
       switch (element) {
         case "input":

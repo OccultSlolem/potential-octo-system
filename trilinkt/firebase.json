@@ -22,7 +22,7 @@
   },
   "emulators": {
     "auth": {
-      "port": 9299
+      "port": 9399
     },
     "functions": {
       "port": 5001
