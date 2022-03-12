@@ -1,21 +1,21 @@
 import type { FirebaseApp } from 'firebase/app';
 import type { Analytics } from 'firebase/analytics';
-import type { User, Auth } from 'firebase/auth';
+import { type User, type Auth, connectAuthEmulator } from 'firebase/auth';
 import type { FirebasePerformance } from 'firebase/performance';
 import type { AppCheck } from 'firebase/app-check';
-import type { FirebaseStorage } from 'firebase/storage';
-import type { Functions } from 'firebase/functions';
+import { connectStorageEmulator, type FirebaseStorage } from 'firebase/storage';
+import { connectFunctionsEmulator, type Functions } from 'firebase/functions';
 
 import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { getPerformance } from "firebase/performance";
-import { getAuth, GoogleAuthProvider, connectAuthEmulator } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
 import { connectFirestoreEmulator, Firestore, getFirestore } from 'firebase/firestore';
-import { connectStorageEmulator, getStorage } from 'firebase/storage';
-import { getFunctions, connectFunctionsEmulator } from 'firebase/functions';
+import { getStorage } from 'firebase/storage';
+import { getFunctions } from 'firebase/functions';
 
-import { firebaseApiKey, recaptchaDebugSiteKey } from './Keys'
+import { firebaseApiKey, recaptchaDebugSiteKey, recaptchaSiteKey } from './Keys'
 
 let app: FirebaseApp;
 export let analytics: Analytics;
@@ -26,8 +26,6 @@ export let appCheck: AppCheck;
 export let firestore: Firestore;
 export let storage: FirebaseStorage;
 export let functions: Functions;
-export const googleAuthProvider = new GoogleAuthProvider();
-
 
 export function initialize() {
   const isLocalHost = (location.hostname == 'localhost' || location.hostname == '127.0.0.1');
@@ -42,7 +40,7 @@ export function initialize() {
     appId: "1:872437238476:web:ee4b98357d524050a8d069",
     measurementId: "G-Z7VQD0G0EG"
   };
-
+ 
   self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
   app = initializeApp(firebaseConfig)
   auth = getAuth(app);
@@ -57,16 +55,17 @@ export function initialize() {
 
   if (isLocalHost) {
     // Enable emulators on localhost
-    connectAuthEmulator(auth, 'http://localhost:9099');
-    connectFirestoreEmulator(firestore, 'localhost', 8080);
-    connectStorageEmulator(storage, 'localhost', 4000);
-    connectFunctionsEmulator(functions, 'localhost', 9199);
+    connectAuthEmulator(auth, 'http://localhost:9299');
+    connectFirestoreEmulator(firestore, 'localhost', 8082);
+    connectStorageEmulator(storage, 'localhost', 9199);
+    connectFunctionsEmulator(functions, 'localhost', 5001);
   }
 
   appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider(isLocalHost ? recaptchaDebugSiteKey : process.env.APPCHECK_RECAPTCHA_SITE_KEY),
+    provider: new ReCaptchaV3Provider(isLocalHost ? recaptchaDebugSiteKey: process.env.APPCHECK_RECAPTCHA_SITE_KEY),
     isTokenAutoRefreshEnabled: true
   });
+
   auth.onAuthStateChanged((auth: User) => {
     if (auth) {
       user = auth;
