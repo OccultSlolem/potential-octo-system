@@ -42,7 +42,8 @@ contract Main {
     // ------------------------------------ subscription stuff
     bool isSubscriptionActive = false;
 
-
+    //cancel subscription
+    //how do we keep track of subscrition time/ can we run something that runs every certain period of time
 
     
 
