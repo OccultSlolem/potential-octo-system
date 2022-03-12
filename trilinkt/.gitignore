@@ -6,3 +6,7 @@ node_modules
 .env
 .env.*
 !.env.example
+src/Firebase.js
+src/Firebase.js.map
+src/Keys.js
+src/Keys.js.map
