@@ -48,10 +48,51 @@ abstract contract Main is ERC20 {
 
     // ------------------------------------ subscription stuff
 
-    
-    bool isSubscriptionActive = false;
 
-    //cancel subscription
+
+    // calculating time elapsed, helps us keep track of calculating remaining time 
+    uint256 timeElapsed = 0;
+    // find time elapsed
+
+    //updating time counter, the time counter keeps track of how much time remains
+    uint256 timeCounter = 0;
+
+
+    // update time counter and set time counter to current time
+    function updateTimeCounter () public {
+        timeCounter = timeFrame - timeElapsed;  
+    }
+    // resets the time counter, would be called when timeCounter == 0 and when we charge user
+    //
+    function resetTimeCounter ()public {
+        //resets time elapsed, time counter
+    }
+
+    //setting issubscriptActive to false
+    // when isSub is false, we should remove merchantData from storage if exists
+    // when is sub is true we test to see if timeCount is == 0
+    // if time counter is == 0 we then charge user and reset timeElapsed, 
+    bool public isSubscriptionActive;
+
+    // sets isSubscriptionActive to false
+    function updateSubscriptionFalse () public {
+        isSubscriptionActive = false;
+    }
+    // sets isSubscriptionActive to true
+    function updateSubscriptionTrue () public {
+        isSubscriptionActive = true;
+    }
+
+
+    // cancel subscription
+
+    function cancelSubscription () public {
+        updateSubscriptionFalse();
+        //remove merchant data from struct
+    }
+    
+
+
     //how do we keep track of subscrition time/ can we run something that runs every certain period of time
 
     
