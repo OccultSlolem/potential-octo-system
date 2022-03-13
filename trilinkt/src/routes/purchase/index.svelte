@@ -25,20 +25,7 @@ import removenavbar from "../__layout.svelte"
     if(period == -1) subscription = "one time purchase"
     else subscription = `${price}ETH / ${period} days`
 
-    if(period != -1) let seconds = (period*24*60*60);
-
 </script>
-
-<!-- <div>
-    <h1 class="header">trilinkt</h1>
-    <div class="center"> 
-        <div>
-            
-        </div>
-        <h3 class="lining">Merchant Name: {merchantname}</h3>
-        
-    </div>
-</div> -->
 
 <div class="main">
     <h1 class="header">trilinkt</h1>

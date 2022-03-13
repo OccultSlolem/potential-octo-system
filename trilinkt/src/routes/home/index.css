@@ -8,4 +8,11 @@
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+    padding-bottom: 30px;
+}
+
+.slide{
+    align-content: center;
+    padding:10px;
+    
 }
