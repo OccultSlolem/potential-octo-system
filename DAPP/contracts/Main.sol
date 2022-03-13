@@ -2,10 +2,9 @@
 
 pragma solidity ^0.8.11;
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
-import "https://github.com/pipermerriam/ethereum-datetime";
 import "/Users/aidan/Desktop/Code/hackathonSFSU2022/potential-octo-system/trilinkt/src/routes/purchase/index.svelte";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
-<
+// import "_transfer(userAddress_, merchantAddress_, cost);"
 
 //main contract 
 abstract contract Main is ERC20 {
@@ -39,12 +38,14 @@ abstract contract Main is ERC20 {
             changeSubStatus();
         }
     }
-    }
+    
 
 
    // ------------------------------------------ paying/main 
     //function that is in charge of paying to address
-    function transfer(uint256 userBalance_, address payable userAddress_, uint256 cost_, address payable merchantAddress_) public {
+    function transfer(uint256 userBalance_, address payable userAddress_, uint256 cost_, address payable merchantAddress_) public { 
+        _transfer(userAddress_, merchantAddress_, cost);
+    }
     // takes in merchant address, user balance, cost,  
     // transfer amount(cost) from user balance to merchant address
     // check if user has enough funds
@@ -56,17 +57,9 @@ abstract contract Main is ERC20 {
             _transfer(userAddress_, merchantAddress_, cost);
         }
     }
+
+
+    function names(merchantName_, productName_) public view {
+        return(merchantName_, productName_);
     }
-
-
-
-
-    
-
-
-
-    
-
-
-
 }
