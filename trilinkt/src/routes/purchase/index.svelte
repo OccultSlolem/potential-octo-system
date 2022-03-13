@@ -1,6 +1,9 @@
 <script land="ts">
 import { onMount } from "svelte";
-import './index.css'
+import './index.css';
+import '/Users/aidan/Desktop/Code/hackathonSFSU2022/potential-octo-system/DAPP/contracts/Main.sol';
+import '/Users/aidan/Desktop/Code/hackathonSFSU2022/potential-octo-system/trilinkt/src/routes/purchase/payment.svelte';
+
 
 
 import removenavbar from "../__layout.svelte"
