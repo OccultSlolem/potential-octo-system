@@ -4,16 +4,9 @@ pragma solidity ^0.8.11;
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "/Users/aidan/Desktop/Code/hackathonSFSU2022/potential-octo-system/trilinkt/src/routes/purchase/index.svelte";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 // import "_transfer(userAddress_, merchantAddress_, cost);"
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
 
 //main contract 
 abstract contract Main is ERC20 {
