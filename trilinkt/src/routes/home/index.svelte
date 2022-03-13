@@ -4,6 +4,7 @@
 
 <div class="main">
     <h1 class="title">Bring your business to the blockchain with <u>trilinkt</u></h1>
+    <div>
         <div class="carousel w-full">
             <div id="slide1" class="carousel-item relative w-full">
                 <img src="images/purchase-page.jpg" alt="Purchase page on customer side" class="w-full"/>
@@ -27,4 +28,18 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="content">
+    <div class="flex flex-col w-full lg:flex-row">
+        <div class="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
+            <p>Allow your customers to purchase your products and/or services using crypto!</p>
+        </div> 
+            <div class="divider lg:divider-horizontal"></div> 
+        <div class="grid flex-grow h-32 card bg-base-300 rounded-box place-items-center">
+            <li>Easy integration</li>
+            <li>Low fees</li>
+        </div>
+        </div>    
+    </div>
+    
 </div>

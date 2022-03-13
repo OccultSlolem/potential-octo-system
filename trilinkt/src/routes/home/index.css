@@ -1,7 +1,7 @@
 .main{
     margin: auto;
     width: 60%; 
-    padding: 10px;
+    padding-top: 10px;
 }
 
 .title{
@@ -15,4 +15,8 @@
     align-content: center;
     padding:10px;
     
+}
+
+.content{
+    padding-bottom: 50px;
 }
