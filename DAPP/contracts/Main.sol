@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
-
-
-import "@openzeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
+import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
 //main contract 
 contract Main is ERC20 {
-
     // ---------------------------------------- data
     string public merchantName;
     string public productName;
@@ -38,6 +36,37 @@ contract Main is ERC20 {
         _transfer(userAddress_, merchantAddress_, cost);
     }
     }
+
+        
+        
+    // function _transfer(
+    //     address from,
+    //     address to,
+    //     uint256 amount
+    // ) internal virtual {
+    //     require(from != address(0), "ERC20: transfer from the zero address");
+    //     require(to != address(0), "ERC20: transfer to the zero address");
+
+    //     _beforeTokenTransfer(from, to, amount);
+
+    //     uint256 fromBalance = _balances[from];
+    //     require(fromBalance >= amount, "ERC20: transfer amount exceeds balance");
+    //     unchecked {
+    //         _balances[from] = fromBalance - amount;
+    //     }
+    //     _balances[to] += amount;
+
+    //     emit Transfer(from, to, amount);
+
+    //     _afterTokenTransfer(from, to, amount);
+    // }
+    
+
+    //     function _beforeTokenTransfer(
+    //     address from,
+    //     address to,
+    //     uint256 amount
+    // ) internal virtual {}
 
     
     
