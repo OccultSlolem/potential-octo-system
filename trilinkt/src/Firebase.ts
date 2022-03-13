@@ -55,7 +55,7 @@ export function initialize() {
 
   if (isLocalHost) {
     // Enable emulators on localhost
-    connectAuthEmulator(auth, 'http://localhost:9399');
+    connectAuthEmulator(auth, 'http://localhost:9099');
     connectFirestoreEmulator(firestore, 'localhost', 8082);
     connectStorageEmulator(storage, 'localhost', 9199);
     connectFunctionsEmulator(functions, 'localhost', 5001);
@@ -75,6 +75,13 @@ export function initialize() {
       console.log('User signed out');
     }
   });
+}
+
+export interface Merchant {
+  name: string
+  logo: string;
+  apiKey: string;
+  products: []
 }
 
 export function disableTelemetry() {
