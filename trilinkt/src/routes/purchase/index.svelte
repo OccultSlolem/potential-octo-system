@@ -24,6 +24,55 @@ import removenavbar from "../__layout.svelte"
     let subscription = "";
     if(period == -1) subscription = "one time purchase"
     else subscription = `${price}ETH / ${period} days`
+    
+    
+    //timer 
+
+    const timePeriod = addEventListener(#timerinput);
+    const cancelSub = addEventListener(#cancelsub);
+    let timeCounter = 0;
+    let subscriptionStatus = false;
+
+   // call this the first time paying 
+    function changeSubStatus () {
+        subscriptionStatus == true;
+    }
+
+    //counting down by days
+    //when asking for user input on time frame for sub
+    //make sure to take the value as days
+    setInterval(subDay(), 1000 * 60 * 60 * 24); 
+ 
+    //resets counter time, makes it reset to timeperiod
+    function resetCounter() {
+        timeCounter = timeCounter + timePeriod;
+    }
+    //this runs after a day
+    function subDay() {
+        timeCounter = timeCounter - 1;
+        setInterval()
+    }
+
+    if(subscriptionStatus == true) {
+        if (timeCounter = 0) {
+            resetCounter()
+            transferFunds(userAddress, merchantAddress, cost)
+      }
+      
+      else {
+          return "error"
+      }
+    }   
+
+    if(cancelSub == true) {
+        isSubscriptionActive == false;
+
+    }
+
+
+
+
+
 
 </script>
 
@@ -57,3 +106,8 @@ import removenavbar from "../__layout.svelte"
      <p>{description}</p>
      
 </div>
+
+
+
+
+
