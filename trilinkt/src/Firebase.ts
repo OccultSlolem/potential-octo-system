@@ -1,21 +1,20 @@
 import type { FirebaseApp } from 'firebase/app';
 import type { Analytics } from 'firebase/analytics';
-import { type User, type Auth, connectAuthEmulator } from 'firebase/auth';
+// import { type User, type Auth, connectAuthEmulator } from 'firebase/auth';
 import type { FirebasePerformance } from 'firebase/performance';
 import type { AppCheck } from 'firebase/app-check';
-import { connectStorageEmulator, type FirebaseStorage } from 'firebase/storage';
-import { connectFunctionsEmulator, type Functions } from 'firebase/functions';
+import type { FirebaseStorage } from 'firebase/storage';
+import type { Functions } from 'firebase/functions';
 
 import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { getPerformance } from "firebase/performance";
-import { getAuth } from "firebase/auth";
+import { getAuth, type Auth, type User } from "firebase/auth";
 import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
-import { connectFirestoreEmulator, Firestore, getFirestore } from 'firebase/firestore';
+import { Firestore, getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getFunctions } from 'firebase/functions';
 
-import { firebaseApiKey, recaptchaDebugSiteKey, recaptchaSiteKey } from './Keys'
 
 let app: FirebaseApp;
 export let analytics: Analytics;
@@ -32,7 +31,7 @@ export function initialize() {
   const cookieConsent = JSON.parse(localStorage.getItem('cookie-consent'))
   // Firebase Configuration
   const firebaseConfig = {
-    apiKey: (isLocalHost ? firebaseApiKey : process.env.FIREBASE_KEY),
+    apiKey: 'AIzaSyAg8oL6ZDcwBtrDy4uv6wY4taKZpZZG0CU',
     authDomain: "trilinkt.firebaseapp.com",
     projectId: "trilinkt",
     storageBucket: "trilinkt.appspot.com",
@@ -41,7 +40,7 @@ export function initialize() {
     measurementId: "G-Z7VQD0G0EG"
   };
  
-  self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+  // self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
   app = initializeApp(firebaseConfig)
   auth = getAuth(app);
   analytics = getAnalytics(app);
@@ -55,14 +54,14 @@ export function initialize() {
 
   if (isLocalHost) {
     // Enable emulators on localhost
-    connectAuthEmulator(auth, 'http://localhost:9099');
-    connectFirestoreEmulator(firestore, 'localhost', 8082);
-    connectStorageEmulator(storage, 'localhost', 9199);
-    connectFunctionsEmulator(functions, 'localhost', 5001);
+    // connectAuthEmulator(auth, 'http://localhost:9299');
+    // connectFirestoreEmulator(firestore, 'localhost', 8082);
+    // connectStorageEmulator(storage, 'localhost', 9199);
+    // connectFunctionsEmulator(functions, 'localhost', 5001);
   }
 
   appCheck = initializeAppCheck(app, {
-    provider: new ReCaptchaV3Provider(isLocalHost ? recaptchaDebugSiteKey: process.env.APPCHECK_RECAPTCHA_SITE_KEY),
+    provider: new ReCaptchaV3Provider('6LezQtUeAAAAAOMiBRtxTRZm5W6HTX4dVxqQ0FCo'),
     isTokenAutoRefreshEnabled: true
   });
 

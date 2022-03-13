@@ -1,2 +1,2 @@
-# potential-octo-system
+# trilinkt
 SF Hacks 2022

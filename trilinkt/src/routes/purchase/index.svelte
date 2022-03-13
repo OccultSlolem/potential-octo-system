@@ -8,7 +8,7 @@ import '/Users/aidan/Desktop/Code/hackathonSFSU2022/potential-octo-system/trilin
 
 import removenavbar from "../__layout.svelte"
     onMount(() => {
-        removenavbar()
+        // removenavbar()
     })
     
     //create variables for everything the merchant would want to input to setup the purchase page that WE will generate
@@ -31,8 +31,8 @@ import removenavbar from "../__layout.svelte"
     
     //timer 
 
-    const timePeriod = addEventListener(#timerinput);
-    const cancelSub = addEventListener(#cancelsub);
+    // const timePeriod = addEventListener(#timerinput);
+    // const cancelSub = addEventListener(#cancelsub);
     let timeCounter = 0;
     let subscriptionStatus = false;
 
@@ -44,33 +44,33 @@ import removenavbar from "../__layout.svelte"
     //counting down by days
     //when asking for user input on time frame for sub
     //make sure to take the value as days
-    setInterval(subDay(), 1000 * 60 * 60 * 24); 
+    // setInterval(subDay(), 1000 * 60 * 60 * 24); 
  
     //resets counter time, makes it reset to timeperiod
     function resetCounter() {
-        timeCounter = timeCounter + timePeriod;
+        // timeCounter = timeCounter + timePeriod;
     }
     //this runs after a day
     function subDay() {
         timeCounter = timeCounter - 1;
-        setInterval()
+        // setInterval()
     }
 
-    if(subscriptionStatus == true) {
-        if (timeCounter = 0) {
-            resetCounter()
-            transferFunds(userAddress, merchantAddress, cost)
-      }
+    // if(subscriptionStatus == true) {
+    //     if (timeCounter = 0) {
+    //         resetCounter()
+    //         transferFunds(userAddress, merchantAddress, cost)
+    //   }
       
-      else {
-          return "error"
-      }
-    }   
+    //   else {
+    //       return "error"
+    //   }
+    // }   
 
-    if(cancelSub == true) {
-        isSubscriptionActive == false;
+    // if(cancelSub == true) {
+    //     isSubscriptionActive == false;
 
-    }
+    // }
 
 
 

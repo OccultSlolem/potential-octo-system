@@ -14,19 +14,15 @@
 
 	onMount(() => {
 		initialize();
-    auth.onAuthStateChanged((user) => {
-      if (user != undefined) {
-        signedIn = true;
-        name = user.email;
-        return;
-      }
-      signedIn = false;
-    })
+		auth.onAuthStateChanged((user) => {
+		if (user != undefined) {
+			signedIn = true;
+			name = user.email;
+			return;
+		}
+		signedIn = false;
+		})
 	});
-
-  function toPortal() {
-    goto('/app');
-  }
 
 	function cookieConsent(consent: Boolean) {
 		localStorage.setItem('cookie-consent', JSON.stringify({ value: consent }));
@@ -75,7 +71,7 @@
 			</div>
 
 			{#if signedIn}
-        <button class="btn btn-primary" on:click="{toPortal}">Merchant Portal</button>
+        		<a class="underline" href="/app">Merchant Portal</a>
 				<div class="dropdown dropdown-left dropdown-hover cursor-pointer order-last">
 					<div tabindex="0" class="avatar online placeholder m-1 pl-2">
 						<div
