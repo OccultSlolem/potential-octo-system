@@ -23,6 +23,8 @@ import { stringify } from "postcss";
     let subscription = "";
     if(period == -1) subscription = "one time purchase"
     else subscription = `${price}ETH / ${period} days`
+    
+    
     //timer stuff
 
     const timePeriod = addEventListener(#timerinput);
@@ -30,11 +32,11 @@ import { stringify } from "postcss";
     let timeCounter = 0;
     let subscriptionStatus = false;
 
+   // call this the first time paying 
     function changeSubStatus () {
         subscriptionStatus == true;
     }
 
-    
     
     setInterval(subDay, 1000 * 60 * 60 * 24)
 
@@ -58,7 +60,6 @@ import { stringify } from "postcss";
     }   
 
     if(cancelSub == true) {
-        cancelSubscription()
         isSubscriptionActive == false;
 
     }
