@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.11;
 
+
+import "@openzeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
 //main contract 
+contract Main is ERC20 {
 
-
-
-contract Main {
     // ---------------------------------------- data
     string public merchantName;
     string public productName;
@@ -23,23 +23,24 @@ contract Main {
     //finds users address 
     address public userAddress = msg.sender;
     uint256 userBalance = userAddress.balance;
-    
-    
-
+    uint256 merchantBalace = merchantAddress.balance;
 
    // ------------------------------------------ paying/main 
     //function that is in charge of paying to address
-    function transfer (address sender_, address merchantAddress_, uint amount_) public {
-        if(sender_ < cost) {
-            
-        }
+    function transfer(uint256 userBalance_, address payable userAddress, uint256 cost_, address payable merchantAddress_) public {
+    // takes in merchant address, user balance, cost,  
+    // transfer amount(cost) from user balance to merchant address
+    // check if user has enough funds
+    if(userBalance_ < cost_) {
+        revert();
+    } 
+    else {
+        _transfer(userAddress_, merchantAddress_, cost);
     }
-        
-   
-    //function that checks balance
-    function balanceOf(address account) external view returns(uint) {
-        return address(this).balance;
     }
+
+    
+    
 
 
 
