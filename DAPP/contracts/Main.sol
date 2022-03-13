@@ -6,7 +6,10 @@ import "/Users/aidan/Desktop/Code/hackathonSFSU2022/potential-octo-system/trilin
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 // import "_transfer(userAddress_, merchantAddress_, cost);"
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
