@@ -11,9 +11,9 @@ contract Main {
     string public productName;
     uint256 public cost;
     uint256 public timeFrame;
-    uint256 public merchantAddress;
+    address payable public merchantAddress;
    
-   constructor (string memory merchantName_, string memory productName_, uint256 cost_, uint256 timeFrame_, uint256 merchantAddress_){
+   constructor (string memory merchantName_, string memory productName_, uint256 cost_, uint256 timeFrame_, address payable merchantAddress_){
     merchantName = merchantName_;
     productName = productName_;
     cost = cost_;
@@ -22,7 +22,9 @@ contract Main {
    }
     //finds users address 
     address public userAddress = msg.sender;
-    mapping(userAddress =>)
+    uint256 userBalance = userAddress.balance;
+    
+    
 
 
    // ------------------------------------------ paying/main 
