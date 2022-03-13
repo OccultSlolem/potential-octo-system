@@ -91,10 +91,16 @@ abstract contract Main is ERC20 {
         updateSubscriptionFalse();
         //end contract
     }
+
+    function subscription(uint timeCounter_)public{
+        for(uint i=0; i<timeCounter_;i++){
+        }
+
+    }
     
 
 
-    //how do we keep track of subscrition time/ can we run something that runs every certain period of time
+    //how do we keep track of subscription time/ can we run something that runs every certain period of time
 
     
 
