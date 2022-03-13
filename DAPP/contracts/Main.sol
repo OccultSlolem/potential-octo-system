@@ -3,6 +3,7 @@
 pragma solidity ^0.8.11;
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "https://github.com/pipermerriam/ethereum-datetime";
+import "/Users/aidan/Desktop/Code/hackathonSFSU2022/potential-octo-system/trilinkt/src/routes/purchase/index.svelte";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
 
 
@@ -34,24 +35,21 @@ abstract contract Main is ERC20 {
     // takes in merchant address, user balance, cost,  
     // transfer amount(cost) from user balance to merchant address
     // check if user has enough funds
-    if(userBalance_ < cost_) {
-        revert();
-    } 
-    else {
-        _transfer(userAddress_, merchantAddress_, cost);
+    function transferFunds (userAddress_, merchantAddress, cost) public {
+        if(userBalance_ < cost_) {
+            revert();
+        } 
+        else {
+            _transfer(userAddress_, merchantAddress_, cost);
+        }
     }
     }
-
 
     // ------------------------------------ subscription stuff
 
     // calculating time 
     // using blocktime to convert the data of time
     toTimestamp(uint16 year, uint8 month, uint8 day) constant returns (uint timestamp)
-
-    // calculating time elapsed, helps us keep track of calculating remaining time 
-    uint256 timeElapsed = 0;
-    // find time elapsed
 
     //updating time counter, the time counter keeps track of how much time remains
     uint256 timeCounter = 0;

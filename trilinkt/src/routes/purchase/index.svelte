@@ -23,6 +23,50 @@ import { stringify } from "postcss";
     let subscription = "";
     if(period == -1) subscription = "one time purchase"
     else subscription = `${price}ETH / ${period} days`
+    //timer stuff
+
+    const timePeriod = addEventListener(#timerinput);
+    const cancelSub = addEventListener(#cancelsub);
+    let timeCounter = 0;
+    let subscriptionStatus = false;
+
+    function changeSubStatus () {
+        subscriptionStatus == true;
+    }
+
+    
+    
+    setInterval(subDay, 1000 * 60 * 60 * 24)
+
+    function resetCounter() {
+        timeCounter = timeCounter + timePeriod;
+    }
+
+    function subDay() {
+        timeCounter = timeCounter - 1;
+    }
+
+    if(subscriptionStatus == true) {
+        if (timeCounter = 0) {
+            resetCounter()
+            transferFunds(userAddress, merchantAddress, cost)
+      }
+      
+      else {
+          return "error"
+      }
+    }   
+
+    if(cancelSub == true) {
+        cancelSubscription()
+        isSubscriptionActive == false;
+
+    }
+
+
+
+
+
 
 </script>
 
@@ -67,3 +111,8 @@ import { stringify } from "postcss";
      <p>{description}</p>
      
 </div>
+
+
+
+
+
