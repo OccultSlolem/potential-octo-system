@@ -12,6 +12,7 @@
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
 
+    console.log(merchantname, productname, period)
     enum LoadingState {
         none = 0,
         loading = 1,

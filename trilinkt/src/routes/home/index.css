@@ -1,0 +1,11 @@
+.main{
+    margin: auto;
+    width: 60%; 
+    padding: 10px;
+}
+
+.title{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}

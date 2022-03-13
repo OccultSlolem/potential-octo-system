@@ -1,15 +1,16 @@
 <script land="ts">
 import { onMount } from "svelte";
 import './index.css'
+
+
 import removenavbar from "../__layout.svelte"
-import { stringify } from "postcss";
     onMount(() => {
         removenavbar()
     })
     
     //create variables for everything the merchant would want to input to setup the purchase page that WE will generate
     let apikey = "myapikey";
-    let merchantname = "Gayierre";
+    let merchantname = "Merchant";
     let logo = "https://logos-world.net/wp-content/uploads/2020/12/Lays-Logo-700x394.png";
 
     //datatypes for product info
@@ -23,6 +24,8 @@ import { stringify } from "postcss";
     let subscription = "";
     if(period == -1) subscription = "one time purchase"
     else subscription = `${price}ETH / ${period} days`
+
+    if(period != -1) let seconds = (period*24*60*60);
 
 </script>
 

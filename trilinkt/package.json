@@ -36,6 +36,7 @@
   "type": "module",
   "dependencies": {
     "daisyui": "^2.6.4",
-    "firebase": "^9.6.8"
+    "firebase": "^9.6.8",
+    "web3": "^1.7.1"
   }
 }

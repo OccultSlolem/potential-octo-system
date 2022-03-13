@@ -4,7 +4,7 @@ pragma solidity ^0.8.11;
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 import "https://github.com/pipermerriam/ethereum-datetime";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
-
+<
 
 //main contract 
 abstract contract Main is ERC20 {
