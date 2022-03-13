@@ -62,9 +62,8 @@
 	async function loadDoc() {
 		await getDoc(docRef).then((value) => {
 			merchant = value.data();
-
-			console.log(Object.values(value.data()['products']));
 			products = Object.values(value.data()['products']);
+            key = value.data()['apikey'];
 		});
 	}
 
@@ -104,7 +103,10 @@
 	}
 
 	function regenKey() {
-		key = makeid(64);
+        key = makeid(64);
+        updateDoc(docRef, {
+            apikey: key
+        })
 	}
 </script>
 
@@ -122,7 +124,7 @@
 		<table class="table w-full">
 			<tbody>
 				<tr>
-					<td class="text-ellipsis">{merchant['apikey']}</td>
+					<td class="text-ellipsis">{key}</td>
 					<td>
 						<button class="btn btn-primary" on:click={() => regenKey()}>Regenerate key</button>
 					</td>
