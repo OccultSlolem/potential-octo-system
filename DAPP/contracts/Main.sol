@@ -1,7 +1,11 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.11;
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/pipermerriam/ethereum-datetime";
 // import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
+
+
 //main contract 
 abstract contract Main is ERC20 {
     // ---------------------------------------- data
@@ -18,6 +22,7 @@ abstract contract Main is ERC20 {
     timeFrame = timeFrame_;
     merchantAddress = merchantAddress_;
    }
+
     //finds users address 
     address public userAddress = msg.sender;
     uint256 userBalance = userAddress.balance;
@@ -37,18 +42,12 @@ abstract contract Main is ERC20 {
     }
     }
 
-        
-    
-
-    
-    
-
-
-
 
     // ------------------------------------ subscription stuff
 
-
+    // calculating time 
+    // using blocktime to convert the data of time
+    toTimestamp(uint16 year, uint8 month, uint8 day) constant returns (uint timestamp)
 
     // calculating time elapsed, helps us keep track of calculating remaining time 
     uint256 timeElapsed = 0;
@@ -57,6 +56,8 @@ abstract contract Main is ERC20 {
     //updating time counter, the time counter keeps track of how much time remains
     uint256 timeCounter = 0;
 
+    
+    
 
     // update time counter and set time counter to current time
     function updateTimeCounter () public {
@@ -88,7 +89,7 @@ abstract contract Main is ERC20 {
 
     function cancelSubscription () public {
         updateSubscriptionFalse();
-        //remove merchant data from struct
+        //end contract
     }
     
 
