@@ -4,12 +4,9 @@
 	import { goto } from '$app/navigation';
 
 	import '../app.css';
-import type { User } from 'firebase/auth';
 	export function removenavbar(){
 		shownavbar = false;
 	}
-
-
 	let shownavbar = true;
 	let name: string;
 	let userNeedsCookieConsent = false;
@@ -74,29 +71,23 @@ import type { User } from 'firebase/auth';
 			</div>
 
 			{#if signedIn}
+        <a href="#" class="mr-1">asdf</a>
 				<div class="dropdown dropdown-left dropdown-hover cursor-pointer order-last">
 					<div tabindex="0" class="avatar online placeholder m-1 pl-2">
 						<div
 							class="rounded-full w-10 h-10 ring ring-primary ring-offset-base-100 ring-offset-2"
 						>
               {#if name != undefined}
-							<span>{name.substring(0,1)}</span>
+							  <span>{name.substring(0,1)}</span>
               {:else}
-              <span>u</span>
+                <span>u</span>
               {/if}
 						</div>
 					</div>
+          
 					<ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52">
 						<li>
 							<span class="font-thin cursor-default text-black text-ellipsis bg-black">{name}</span>
-						</li>
-						<li>
-							<button class="btn btn-accent" href="#">Profile</button><br>
-							
-						</li>
-						<li />
-						<li>
-							<button class="btn btn-accent" href="#">Preferences</button><br>
 						</li>
 						<li>
 							<button class="btn" on:click={signout}>Sign out</button>
