@@ -5,7 +5,12 @@
 
 	import '../app.css';
 import type { User } from 'firebase/auth';
+	export function removenavbar(){
+		shownavbar = false;
+	}
 
+
+	let shownavbar = true;
 	let name: string;
 	let userNeedsCookieConsent = false;
   let signedIn = user != undefined
@@ -57,6 +62,7 @@ import type { User } from 'firebase/auth';
 </script>
 
 <html data-theme="cyberpunk" lang="en">
+	{#if shownavbar}
 	<nav>
 		<div
 			class="navbar flex-row flex-shrink justify-evenly mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
@@ -126,6 +132,6 @@ import type { User } from 'firebase/auth';
 			</div>
 		</div>
 	{/if}
-
+	{/if}	
 	<slot />
 </html>
