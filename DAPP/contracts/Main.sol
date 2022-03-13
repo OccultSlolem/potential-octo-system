@@ -58,7 +58,7 @@ abstract contract Main is ERC20 {
     }
     }
 
-    // ------------------------------------ subscription stuff
+
 
 
     

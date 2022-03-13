@@ -25,7 +25,7 @@ import { stringify } from "postcss";
     else subscription = `${price}ETH / ${period} days`
     
     
-    //timer stuff
+    //timer 
 
     const timePeriod = addEventListener(#timerinput);
     const cancelSub = addEventListener(#cancelsub);
@@ -37,15 +37,19 @@ import { stringify } from "postcss";
         subscriptionStatus == true;
     }
 
-    
-    setInterval(subDay, 1000 * 60 * 60 * 24)
-
+    //counting down by days
+    //when asking for user input on time frame for sub
+    //make sure to take the value as days
+    setInterval(subDay(), 1000 * 60 * 60 * 24); 
+ 
+    //resets counter time, makes it reset to timeperiod
     function resetCounter() {
         timeCounter = timeCounter + timePeriod;
     }
-
+    //this runs after a day
     function subDay() {
         timeCounter = timeCounter - 1;
+        setInterval()
     }
 
     if(subscriptionStatus == true) {
